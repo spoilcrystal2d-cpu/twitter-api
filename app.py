@@ -60,17 +60,15 @@ def update_twitter_profile(access_token, access_secret):
 
         # Banner
         banner_image_path = "static/banner.jpg"
-if os.path.exists(banner_image_path):
-    print("🔹 Tentativo aggiornamento banner...")
-    try:
-        api.update_profile_banner(banner_image_path)
-        print("✅ Banner aggiornato!")
-    except tweepy.TweepError as e:
-        print(f"❌ Errore Twitter API banner: {e.api_code} - {e.reason}")
-    except Exception as e:
-        print(f"❌ Errore generico banner: {str(e)}")
-else:
-    print("⚠️ Banner non trovato:", banner_image_path)
+        if os.path.exists(banner_image_path):
+            print("🔹 Tentativo aggiornamento banner...")
+            try:
+                api.update_profile_banner(banner_image_path)
+                print("✅ Banner aggiornato!")
+            except Exception as e:
+                print(f"❌ Errore generico banner: {str(e)}")
+            else:
+                print("⚠️ Banner non trovato:", banner_image_path)
 
         # Tweet automatico
         tweet = (
@@ -129,6 +127,7 @@ def banner_image():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
 
 
 
