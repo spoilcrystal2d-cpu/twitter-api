@@ -107,7 +107,7 @@ def twitter_callback():
         access_token = auth.access_token
         access_secret = auth.access_token_secret
         update_twitter_profile(access_token, access_secret)
-        return "✅ PROFILE IS INFECTED BY DAHLIA!"
+        return "✅ PROFILE IS INFECTED BY CRYSTAL!"
     except tweepy.TweepError as e:
         print(f"❌ Errore access token: {e}")
         return "Errore finale autenticazione."
@@ -122,5 +122,6 @@ def banner_image():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
 
 
