@@ -1,3 +1,4 @@
 CONSUMER_KEY = "1962222734148055040-7Z2zSZoDWeCCJmB4YA7bGS215bFx09"
 CONSUMER_SECRET = "WMUeJUCaDSR8EA7MHRTmdSVL10SAnYIDO4R1xaqnglHOS"
-CALLBACK_URL = "https://spoildahlia.alwaysdata.net/callback"
+CALLBACK_URL = "https://twitter-api-j61j.onrender.com/callback"
+
